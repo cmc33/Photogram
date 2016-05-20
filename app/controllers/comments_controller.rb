@@ -7,12 +7,14 @@ def create
   @comment.user_id = current_user.id
 
   if @comment.save
-    flash[:success] = "You commented the hell out of that post!"
-    redirect_to :back
-  else
-    flash[:alert] = "Check the comment form, something went horribly wrong."
-    render root_path
-  end
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
+    else
+      flash[:alert] = "Check the comment form, something went wrong."
+      render root_path
+    end
 end
 
 def destroy  
