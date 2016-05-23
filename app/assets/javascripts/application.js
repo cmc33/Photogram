@@ -1,4 +1,6 @@
-
+//= require react
+//= require react_ujs
+//= require components
 
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
